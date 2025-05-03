@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RealEstatePlatform xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../1_schema/real_estate_schema.xsd">
+
+  <!-- === Users: Buyers, Sellers, Agents, etc. === -->
+  <Users>
+    <User>
+      <UserID>U001</UserID>
+      <Name>Alok Uniyal</Name>
+      <Role>Buyer</Role>
+      <Email>alok.uniyal123@gmail.com</Email>
+      <Phone>087-123-4567</Phone>
+    </User>
+    <User>
+      <UserID>U002</UserID>
+      <Name>Abhay Garg</Name>
+      <Role>Seller</Role>
+      <Email>abhay.garg2521@gmail.com</Email>
+      <Phone>086-998-7654</Phone>
+    </User>
+    <User>
+      <UserID>U003</UserID>
+      <Name>Lisa O'Connor</Name>
+      <Role>Tenant</Role>
+      <Email>lisa.oconnor@mail.com</Email>
+      <Phone>089-443-2288</Phone>
+    </User>
+    <User>
+      <UserID>U004</UserID>
+      <Name>Mayank Nath</Name>
+      <Role>Lessor</Role>
+      <Email>Mayank.Nath2025@rentmail.com</Email>
+      <Phone>085-334-1276</Phone>
+    </User>
+    <User>
+      <UserID>U005</UserID>
+      <Name>James Kavanagh</Name>
+      <Role>Agent</Role>
+      <Email>j.kavanagh@estatewise.ie</Email>
+      <Phone>085-888-1122</Phone>
+    </User>
+    <User>
+      <UserID>U006</UserID>
+      <Name>Clare Murphy</Name>
+      <Role>Agent</Role>
+      <Email>clare.murphy@urbankey.ie</Email>
+      <Phone>086-567-4422</Phone>
+    </User>
+  </Users>
+
+  <!-- === Properties === -->
+  <Properties>
+    <Property>
+      <PropertyID>P001</PropertyID>
+      <Type>Apartment</Type>
+      <Location>12 Greenview Court, Dublin</Location>
+      <Price>340000.00</Price>
+      <Status>Available</Status>
+      <OwnerID>U002</OwnerID>
+      <AgentID>U005</AgentID>
+    </Property>
+    <Property>
+      <PropertyID>P002</PropertyID>
+      <Type>House</Type>
+      <Location>47 Elm Road, Cork</Location>
+      <Price>475000.00</Price>
+      <Status>Sold</Status>
+      <OwnerID>U002</OwnerID>
+      <AgentID>U006</AgentID>
+    </Property>
+    <Property>
+      <PropertyID>P003</PropertyID>
+      <Type>Apartment</Type>
+      <Location>Flat 3, 22 Rosehill Ave, Limerick</Location>
+      <Price>1200.00</Price>
+      <Status>Rented</Status>
+      <OwnerID>U004</OwnerID>
+      <AgentID>U006</AgentID>
+    </Property>
+  </Properties>
+
+  <!-- === Agencies === -->
+  <Agencies>
+    <Agency>
+      <AgencyID>A001</AgencyID>
+      <AgencyName>EstateWise Realty</AgencyName>
+      <AgentIDs>
+        <AgentID>U005</AgentID>
+      </AgentIDs>
+    </Agency>
+    <Agency>
+      <AgencyID>A002</AgencyID>
+      <AgencyName>UrbanKey Properties</AgencyName>
+      <AgentIDs>
+        <AgentID>U006</AgentID>
+      </AgentIDs>
+    </Agency>
+  </Agencies>
+
+  <!-- === Services === -->
+  <Services>
+    <Service>
+      <ServiceID>S001</ServiceID>
+      <Type>Inspection</Type>
+      <ProviderName>HomeCheck Ireland</ProviderName>
+      <Contact>check@homecheck.ie</Contact>
+      <AvailableDates>
+        <Date>2025-04-20</Date>
+        <Date>2025-04-22</Date>
+      </AvailableDates>
+    </Service>
+    <Service>
+      <ServiceID>S002</ServiceID>
+      <Type>Maintenance</Type>
+      <ProviderName>FixIt Fast Services</ProviderName>
+      <Contact>support@fixitfast.ie</Contact>
+      <AvailableDates>
+        <Date>2025-04-18</Date>
+        <Date>2025-04-23</Date>
+      </AvailableDates>
+    </Service>
+  </Services>
+
+  <!-- === Bookings === -->
+  <Bookings>
+    <Booking>
+      <BookingID>B001</BookingID>
+      <UserID>U001</UserID>
+      <PropertyID>P001</PropertyID>
+      <Date>2025-04-17</Date>
+      <Time>10:30:00</Time>
+    </Booking>
+    <Booking>
+      <BookingID>B002</BookingID>
+      <UserID>U003</UserID>
+      <PropertyID>P003</PropertyID>
+      <Date>2025-04-16</Date>
+      <Time>14:00:00</Time>
+    </Booking>
+  </Bookings>
+
+  <!-- === Transactions === -->
+  <Transactions>
+    <Transaction>
+      <TransactionID>T001</TransactionID>
+      <BuyerID>U001</BuyerID>
+      <SellerID>U002</SellerID>
+      <PropertyID>P002</PropertyID>
+      <Amount>475000.00</Amount>
+      <Date>2025-04-14</Date>
+      <Status>Completed</Status>
+    </Transaction>
+    <Transaction>
+      <TransactionID>T002</TransactionID>
+      <BuyerID>U003</BuyerID>
+      <SellerID>U004</SellerID>
+      <PropertyID>P003</PropertyID>
+      <Amount>1200.00</Amount>
+      <Date>2025-04-13</Date>
+      <Status>Completed</Status>
+    </Transaction>
+  </Transactions>
+
+</RealEstatePlatform>

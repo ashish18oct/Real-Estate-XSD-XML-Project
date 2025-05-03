@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+  <!-- Root Element -->
+  <xs:element name="RealEstatePlatform">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Users" type="UsersType"/>
+        <xs:element name="Properties" type="PropertiesType"/>
+        <xs:element name="Agencies" type="AgenciesType"/>
+        <xs:element name="Services" type="ServicesType"/>
+        <xs:element name="Bookings" type="BookingsType"/>
+        <xs:element name="Transactions" type="TransactionsType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- User Roles -->
+  <xs:simpleType name="UserRoleType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Buyer"/>
+      <xs:enumeration value="Seller"/>
+      <xs:enumeration value="Tenant"/>
+      <xs:enumeration value="Lessor"/>
+      <xs:enumeration value="Agent"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Property Types -->
+  <xs:simpleType name="PropertyType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Apartment"/>
+      <xs:enumeration value="House"/>
+      <xs:enumeration value="Commercial"/>
+      <xs:enumeration value="Land"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Service Types -->
+  <xs:simpleType name="ServiceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Inspection"/>
+      <xs:enumeration value="Maintenance"/>
+      <xs:enumeration value="Repair"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Users -->
+  <xs:complexType name="UsersType">
+    <xs:sequence>
+      <xs:element name="User" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="UserID" type="xs:string"/>
+            <xs:element name="Name" type="xs:string"/>
+            <xs:element name="Role" type="UserRoleType"/>
+            <xs:element name="Email" type="xs:string"/>
+            <xs:element name="Phone" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Properties -->
+  <xs:complexType name="PropertiesType">
+    <xs:sequence>
+      <xs:element name="Property" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="PropertyID" type="xs:string"/>
+            <xs:element name="Type" type="PropertyType"/>
+            <xs:element name="Location" type="xs:string"/>
+            <xs:element name="Price" type="xs:decimal"/>
+            <xs:element name="Status" type="xs:string"/>
+            <xs:element name="OwnerID" type="xs:string"/>
+            <xs:element name="AgentID" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Agencies -->
+  <xs:complexType name="AgenciesType">
+    <xs:sequence>
+      <xs:element name="Agency" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="AgencyID" type="xs:string"/>
+            <xs:element name="AgencyName" type="xs:string"/>
+            <xs:element name="AgentIDs">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="AgentID" type="xs:string" maxOccurs="unbounded"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Services -->
+  <xs:complexType name="ServicesType">
+    <xs:sequence>
+      <xs:element name="Service" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ServiceID" type="xs:string"/>
+            <xs:element name="Type" type="ServiceType"/>
+            <xs:element name="ProviderName" type="xs:string"/>
+            <xs:element name="Contact" type="xs:string"/>
+            <xs:element name="AvailableDates" minOccurs="0">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Date" type="xs:date" maxOccurs="unbounded"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Bookings -->
+  <xs:complexType name="BookingsType">
+    <xs:sequence>
+      <xs:element name="Booking" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="BookingID" type="xs:string"/>
+            <xs:element name="UserID" type="xs:string"/>
+            <xs:element name="PropertyID" type="xs:string"/>
+            <xs:element name="Date" type="xs:date"/>
+            <xs:element name="Time" type="xs:time"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Transactions -->
+  <xs:complexType name="TransactionsType">
+    <xs:sequence>
+      <xs:element name="Transaction" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="TransactionID" type="xs:string"/>
+            <xs:element name="BuyerID" type="xs:string"/>
+            <xs:element name="SellerID" type="xs:string"/>
+            <xs:element name="PropertyID" type="xs:string"/>
+            <xs:element name="Amount" type="xs:decimal"/>
+            <xs:element name="Date" type="xs:date"/>
+            <xs:element name="Status" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

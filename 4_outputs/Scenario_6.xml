@@ -1,0 +1,23 @@
+<ExternalListings>
+   <Listing>
+      <ID>P001</ID>
+      <Category>Apartment</Category>
+      <Address>12 Greenview Court, Dublin</Address>
+      <Value>340000.00</Value>
+      <ListingStatus>Available</ListingStatus>
+   </Listing>
+   <Listing>
+      <ID>P002</ID>
+      <Category>House</Category>
+      <Address>47 Elm Road, Cork</Address>
+      <Value>475000.00</Value>
+      <ListingStatus>Sold</ListingStatus>
+   </Listing>
+   <Listing>
+      <ID>P003</ID>
+      <Category>Apartment</Category>
+      <Address>Flat 3, 22 Rosehill Ave, Limerick</Address>
+      <Value>1200.00</Value>
+      <ListingStatus>Rented</ListingStatus>
+   </Listing>
+</ExternalListings>

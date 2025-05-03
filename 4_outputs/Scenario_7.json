@@ -1,0 +1,25 @@
+{
+    "properties": [
+        {
+            "id": "P001",
+            "type": "Apartment",
+            "location": "12 Greenview Court, Dublin",
+            "price": 340000.00,
+            "status": "Available"
+        },
+        {
+            "id": "P002",
+            "type": "House",
+            "location": "47 Elm Road, Cork",
+            "price": 475000.00,
+            "status": "Sold"
+        },
+        {
+            "id": "P003",
+            "type": "Apartment",
+            "location": "Flat 3, 22 Rosehill Ave, Limerick",
+            "price": 1200.00,
+            "status": "Rented"
+        }
+    ]
+}

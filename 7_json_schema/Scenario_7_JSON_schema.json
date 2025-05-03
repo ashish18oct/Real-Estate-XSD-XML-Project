@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Property Listings Schema",
+    "type": "object",
+    "properties": {
+      "properties": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^P[0-9]{3}$"
+            },
+            "type": {
+              "type": "string",
+              "enum": ["Apartment", "House", "Commercial", "Land"]
+            },
+            "location": {
+              "type": "string"
+            },
+            "price": {
+              "type": "number",
+              "minimum": 0
+            },
+            "status": {
+              "type": "string"
+            }
+          },
+          "required": ["id", "type", "location", "price", "status"]
+        }
+      }
+    },
+    "required": ["properties"]
+  }
+  
